@@ -1,5 +1,5 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 //const database = require('./database')
 
@@ -9,12 +9,12 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(bodyParser.json())
-app.use(express.static(__dirname + "/"));
+app.use(bodyParser.json());
+app.use(express.static(__dirname + "/app/"));
 
 app.get('/messages', function (req, res) {
   res.json(['a','v'])
-})
+});
 
 //app.delete('/comments/:id', function(req, res) {
 //    const id = req.params.id
@@ -30,4 +30,4 @@ app.get('/messages', function (req, res) {
 
 app.listen(3000, function () {
   console.log('Comments server listening on port 3000!')
-})
+});
