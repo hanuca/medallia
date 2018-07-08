@@ -1,17 +1,11 @@
 class MailHomePageCtrl {
 
-    constructor() {
-        this.userName = 'aaa';
+    constructor(/*inject*/ inboxService) {
+        this.userName = inboxService.getInboxUser();
 
-        this.unreadMessages = 3;
-        this.totalMessages = 10;
-
-        this.viewMessages = function() {
-
-            alert('gdf');
-        };
+        this.unreadMessages = inboxService.getUnreadMessages();
+        this.totalMessages = inboxService.getTotalMessages();
     }
-
 }
 
 angular.module('mail-app').controller('mail-home-page', MailHomePageCtrl);
