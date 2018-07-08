@@ -1,0 +1,11 @@
+
+<div  ng-controller="mail-home-page as $ctrl" class="main-page height--100">
+
+    <h1> Hello  {{$ctrl.userName}} </h1>
+
+    <div> You have {{$ctrl.unreadMessages}} unread message out of {{$ctrl.totalMessages}} total</div>
+
+    <button class="view-messages-button">
+        <a class="view-messages-link" ui-sref="inbox">View Messages</a>
+    </button>
+</div>

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.18",
     "angular": "^1.7.2",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.1",

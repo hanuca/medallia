@@ -1,16 +1,17 @@
-(function() {
-    'use strict';
+angular.module('mail-app', ['ui.router']).config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    var mailApp = angular.module('mail-app', []);
-
-    mailApp.controller('mail-home-page', function($scope) {
-
-        $scope.userName = 'moshe';
-
-
-
-
-
+    $urlRouterProvider.otherwise('/home');
+    $locationProvider.html5Mode({
+        enabled: true, requireBase: false
     });
 
-})();
+    $stateProvider.state('home', {
+            url: '/home',
+            templateUrl: 'app/home/main-page.html'
+        })
+
+        .state('inbox', {
+            url: '/inbox',
+            templateUrl: 'app/inbox/inbox.html'
+        });
+});

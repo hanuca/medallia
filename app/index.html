@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="stretch">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Mail</title>
 
+    <!-- LIB -->
     <script src="../node_modules/lodash/lodash.min.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
 
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../app/index.css">
     <script src="../app/index.js"></script>
+
+    <!-- inbox -->
+    <link rel="stylesheet" type="text/css" href="../app/home/main-page.css">
+    <script src="../app/home/main-page.js"></script>
+
+    <!-- inbox -->
+    <link rel="stylesheet" type="text/css" href="../app/inbox/inbox.css">
+    <script src="../app/inbox/inbox.js"></script>
+
 </head>
-<body ng-app="mail-app" class="height--100">
+<body ng-app="mail-app" class="home-page height--100">
 
-    <div ng-controller="mail-home-page">
-        {{userName}}
-    </div>
-
+    <ui-view></ui-view>
 
 </body>
 </html>

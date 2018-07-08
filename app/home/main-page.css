@@ -1,0 +1,20 @@
+.home-page {
+    background-color: aqua;
+}
+
+.home-page .main-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-page .main-page .view-messages-button {
+    background-color: blue;
+    width: 200px;
+    height: 60px;
+}
+
+.home-page .main-page .view-messages-link {
+    color: white;
+}
+
