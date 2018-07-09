@@ -1,7 +1,11 @@
+// lib
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-//const database = require('./database')
+const _ = require('lodash');
+
+// app
+const database = require('./database');
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -13,31 +17,19 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + "/app/"));
 
 app.get('/getUnreadMessages', function (req, res) {
-  res.json({unreadMessages: 3});
+
+  let messages = database.getMessages();
+  let notReadMessage = _.filter(messages, {isRead: false});
+  res.json({unreadMessages: notReadMessage.length});
 });
 
 app.get('/getTotalMessages', function (req, res) {
-    res.json({totalMessages: 10});
+    let messages = database.getMessages();
+    res.json({totalMessages: messages.length});
 });
 
 app.get('/getMessages', function (req, res) {
-
-    let messages =[];
-
-    messages.push(
-        {
-            subject: 'subject',
-            content: 'content',
-        },
-        {
-            subject: 'subject123',
-            content: 'content123',
-        },
-        {
-            subject: 'subject999',
-            content: 'very large content to check elipsis is working',
-        });
-
+    let messages = database.getMessages();
     res.json(messages);
 });
 
