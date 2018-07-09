@@ -1,10 +1,10 @@
-<div  ng-controller="mail-home-page as $ctrl" class="main-page height--100">
+<div  ng-controller="mail-home-page as $ctrl" class="main-page height--100 relative">
 
-    <h1> Hello  {{::$ctrl.userName}} </h1>
+    <h1 class="absolute greeting"> Hello  {{::$ctrl.userName}} </h1>
 
-    <div> You have {{$ctrl.unreadMessages}} unread message out of {{$ctrl.totalMessages}} total</div>
+    <div class="absolute message-summary"> You have {{$ctrl.unreadMessages}} unread message out of {{$ctrl.totalMessages}} total</div>
 
-    <button class="view-messages-button">
+    <button class="absolute view-messages-button">
         <a class="view-messages-link" ui-sref="inbox">View Messages</a>
     </button>
 </div>

@@ -1,32 +1,5 @@
-body {
-    height: 100%;
-    margin: 0;
-}
-
-.stretch {
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
-.height--100 {
-    height: 100%;
-}
-
-.home-page {
-    background-color: aqua;
-}
-
-.home-page .main-page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.home-page .main-page .view-messages-button {
-    color: white;
-    background-color: blue;
-
-    width: 200px;
-    height: 60px;
+.inbox {
+    width: 300px;
+    margin: 20px;
+    border: 1px solid black;
 }

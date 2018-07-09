@@ -8,10 +8,20 @@
     align-items: center;
 }
 
+.home-page .main-page .greeting {
+    top: 20%;
+}
+
+.home-page .main-page .message-summary {
+    top: 30%;
+    font-size: 24px;
+}
+
 .home-page .main-page .view-messages-button {
     background-color: blue;
     width: 200px;
     height: 60px;
+    top: 40%;
 }
 
 .home-page .main-page .view-messages-link {

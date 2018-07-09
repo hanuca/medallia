@@ -35,7 +35,7 @@ app.get('/getMessages', function (req, res) {
         },
         {
             subject: 'subject999',
-            content: 'content999',
+            content: 'very large content to check elipsis is working',
         });
 
     res.json(messages);

@@ -1,11 +1,17 @@
 .message {
-
+    padding: 20px;
+    width: 200px;
 }
 
 .message .subject {
-
+    font-weight: bold;
 }
 
 .message .content {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
 
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }

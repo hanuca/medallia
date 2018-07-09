@@ -1,12 +1,13 @@
 class MailHomePageCtrl {
 
-    constructor(/*inject*/ inboxService) {
-        this.wire(inboxService);
+    constructor(/*inject*/ $scope, inboxService) {
+        this.wire(inboxService, $scope);
         this.load();
     }
 
-    wire(inboxService) {
+    wire(inboxService, $scope) {
         this.inboxService = inboxService;
+        this.$scope = $scope;
     }
 
     load() {
@@ -21,6 +22,7 @@ class MailHomePageCtrl {
     async loadMessagesCounter() {
         this.unreadMessages = await this.inboxService.getUnreadMessages();
         this.totalMessages = await this.inboxService.getTotalMessages();
+        this.$scope.$digest();
     }
 }
 

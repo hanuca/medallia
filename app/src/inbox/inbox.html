@@ -1,8 +1,10 @@
-<div class="inbox" ng-controller="inbox-controller as $ctrl">
+<div class="height--100 relative" ng-controller="inbox-controller as $ctrl">
 
-    <div ng-repeat="message in $ctrl.messages">
+    <div class="inbox">
+        <div ng-repeat="message in $ctrl.messages">
 
-        <message message="message"></message>
+            <message message="message"></message>
 
+        </div>
     </div>
 </div>

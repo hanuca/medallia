@@ -13,6 +13,14 @@ body {
     height: 100%;
 }
 
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
 .home-page {
     background-color: aqua;
 }
