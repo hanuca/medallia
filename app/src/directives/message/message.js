@@ -9,5 +9,6 @@ angular.module('mail-app').component('message',  {
   templateUrl: 'src/directives/message/message.html',
   bindings: {
     message: '=',
+    select: '&'
   },
 });

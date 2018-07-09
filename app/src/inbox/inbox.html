@@ -3,7 +3,7 @@
     <div class="inbox">
         <div ng-repeat="message in $ctrl.messages">
 
-            <message message="message"></message>
+            <message message="message" select="$ctrl.selectMessage(message)"></message>
 
         </div>
     </div>
