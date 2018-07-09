@@ -1,38 +1,39 @@
 class InboxService {
 
-    constructor() {
+    constructor($http) {
+        this.wire($http);
     }
 
-    viewMessages() {
-        alert('gdf');
+    wire($http) {
+        this.$http = $http;
     }
 
     getInboxUser() {
-        return 'moshe';
+        return 'moshe'; // should be login user at session
     }
 
     getUnreadMessages() {
-        return 3;
+        return this.$http.get('http://localhost:3000/getUnreadMessages').then(function(data) {
+            return data.data.unreadMessages;
+        });
     }
 
     getTotalMessages() {
-        return 10;
+        return this.$http.get('http://localhost:3000/getTotalMessages').then(function(data) {
+            return data.data.totalMessages;
+        });
     }
 
     getMessages() {
-
-        // Mock messages
-        let message = new Message('subject', 'content');
-        let message2 = new Message('subject222', 'content222');
-        let message3 = new Message('333333', 'bocy 3333');
-
-        let messages = [];
-        messages.push(message);
-        messages.push(message2);
-        messages.push(message3);
-        return messages;
+        return this.$http.get('http://localhost:3000/getMessages').then(function(data) {
+            let messages = [];
+            _.forEach(data.data, (item) => {
+                let message = new Message(item.subject,item.content);
+                messages.push(message);
+            });
+            return messages;
+        });
     }
-
 }
 
 angular.module('mail-app').service('inboxService', InboxService);

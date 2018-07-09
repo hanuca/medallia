@@ -1,7 +1,16 @@
 class InboxCtrl {
 
     constructor(/*inject*/ inboxService) {
-        this.messages = inboxService.getMessages();
+        this.wire(inboxService);
+        this.load();
+    }
+
+    wire(inboxService) {
+        this.inboxService = inboxService;
+    }
+
+    async load() {
+        this.messages = await this.inboxService.getMessages();
     }
 }
 

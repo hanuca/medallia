@@ -1,10 +1,26 @@
 class MailHomePageCtrl {
 
     constructor(/*inject*/ inboxService) {
-        this.userName = inboxService.getInboxUser();
+        this.wire(inboxService);
+        this.load();
+    }
 
-        this.unreadMessages = inboxService.getUnreadMessages();
-        this.totalMessages = inboxService.getTotalMessages();
+    wire(inboxService) {
+        this.inboxService = inboxService;
+    }
+
+    load() {
+        this.loadUser();
+        this.loadMessagesCounter();
+    }
+
+    loadUser() {
+        this.userName = this.inboxService.getInboxUser();
+    }
+
+    async loadMessagesCounter() {
+        this.unreadMessages = await this.inboxService.getUnreadMessages();
+        this.totalMessages = await this.inboxService.getTotalMessages();
     }
 }
 

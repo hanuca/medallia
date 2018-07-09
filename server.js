@@ -12,21 +12,34 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/app/"));
 
-app.get('/messages', function (req, res) {
-  res.json(['a','v'])
+app.get('/getUnreadMessages', function (req, res) {
+  res.json({unreadMessages: 3});
 });
 
-//app.delete('/comments/:id', function(req, res) {
-//    const id = req.params.id
-//    database.remove(id)
-//    res.sendStatus(200)
-//})
+app.get('/getTotalMessages', function (req, res) {
+    res.json({totalMessages: 10});
+});
 
-//app.put('/comments/:id', function(req, res) {
-//    const comment = req.body.comment
-//    const id = req.params.id
-//    res.json(database.update(id, comment))
-//})
+app.get('/getMessages', function (req, res) {
+
+    let messages =[];
+
+    messages.push(
+        {
+            subject: 'subject',
+            content: 'content',
+        },
+        {
+            subject: 'subject123',
+            content: 'content123',
+        },
+        {
+            subject: 'subject999',
+            content: 'content999',
+        });
+
+    res.json(messages);
+});
 
 app.listen(3000, function () {
   console.log('Comments server listening on port 3000!')
