@@ -33,6 +33,18 @@ app.get('/getMessages', function (req, res) {
     res.json(messages);
 });
 
+app.put('/markMessageAsRead/:id', function(req, res) {
+    const id = req.params.id
+    let readMessageResult = database.markReadMessage(id)
+
+    if (readMessageResult) {
+        res.json(readMessageResult);
+    } else {
+        res.json('message is not existed');
+    }
+})
+
+
 app.listen(3000, function () {
   console.log('Comments server listening on port 3000!')
 });

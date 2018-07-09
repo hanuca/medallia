@@ -1,9 +1,10 @@
 class Message {
 
-    constructor(subject, content) {
+    constructor(id, subject, content, isRead) {
+        this.id = id;
         this.subject = subject;
         this.content = content;
-        this.isRead = false;
+        this.isRead = isRead ? isRead : false;
     }
 
     read() {

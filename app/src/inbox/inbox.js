@@ -18,6 +18,17 @@ class InboxCtrl {
     }
 
     selectMessage(message) {
+
+        this.updateReadMessage(message);
+        this.goToMessageView(message);
+    }
+
+    updateReadMessage(message) {
+        message.read();
+        return this.inboxService.readMessage(message);
+    }
+
+    goToMessageView(message) {
         this.$state.go('message-view', {message: message});
     }
 }

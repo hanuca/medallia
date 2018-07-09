@@ -2,6 +2,6 @@
 
     <div class="subject"> {{$ctrl.message.subject}} </div>
 
-    <div class="content"> {{$ctrl.message.content}} </div>
+    <div class="content" ng-class="{'is-read': $ctrl.message.isRead}"> {{$ctrl.message.content}} </div>
 
 </div>

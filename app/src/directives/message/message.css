@@ -15,3 +15,7 @@
     overflow: hidden;
     white-space: nowrap;
 }
+
+.message .content.is-read {
+  text-decoration: line-through;
+}
